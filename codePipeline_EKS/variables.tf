@@ -13,11 +13,57 @@ variable "aws_credentials" {
   sensitive = true
 }
 
+variable "codepipeline_name" {
+  description = "Name of the pipeline"
+  type        = string
+}
 
-variable codeStart_github_connection_Arn {
-  description = "the arn of CodeStart connection with the application in Github"
-  type = string
-  default = "arn:aws:codestar-connections:eu-west-1:484123018117:connection/XXXXXXXXX"
 
-  sensitive = true
+variable "role_codepipeline_name" {
+  description = "Name the IAM role of CodePipeline"
+  type        = string
+}
+
+variable "role_codebuild_name" {
+  description = "Name of the role of CodeBuild's resources"
+  type        = string
+}
+
+variable "source_type" {
+  description = "S3 or Github"
+  type        = string
+}
+
+variable "source_configuration_S3" {
+  description = "the configuration of the S3 source bucket"
+  type        = map(string)
+  default = {
+    S3Bucket    = "source-bucket-name"
+    S3ObjectKey = "code.zip"
+  }
+}
+
+variable "source_configuration_github" {
+  description = "the configuration of the github repo"
+  type        = map(string)
+  default = {
+    ConnectionArn    = "arn:aws:codestar-connections:eu-west-1:XXXX:connection/XXXXXXX"
+    FullRepositoryId = "GIT_ACCOUNT/REPO_NAME"
+    BranchName       = "BRANCH_NAME"
+  }
+}
+
+variable "ecr_repository_name" {
+  description = "Name of the registery repository"
+  type        = string
+}
+
+variable "bucket_artifacts_name" {
+  description = "The name of the bucket of codepipeline artifacts"
+  type        = string
+}
+
+variable "tags" {
+  description = "Tags to be applied to the codebuild project"
+  type        = map(any)
 }

@@ -1,36 +1,24 @@
 variable "role_codepipeline_name" {
-  description = "Name ..."
+  description = "Name of the IAM role of CodePipeline"
   type        = string
-  default     = "role-codepipeline-mate"
-}
-
-variable "policy_codepipeline_name" {
-  description = "Name ..."
-  type        = string
-  default     = "policy-codepipeline-mate"
 }
 
 variable "role_codebuild_name" {
-  description = "Name ..."
+  description = "Name of the role of CodeBuild's resources"
   type        = string
-  default     = "role-codebuild-mate"
 }
 
-variable "policy_codebuild_name" {
-  description = "Name ..."
+variable "bucket_artifacts_name" {
+  description = "Name of the bucket of codepipeline artifacts"
   type        = string
-  default     = "policy-codebuild-mate"
 }
 
-variable "bucket_codepipeline_artifacts_name" {
-  description = "The name of the bucket of codepipeline artifacts"
+variable "bucket_source_code_name" {
+  description = "Name of the bucket of Source code S3 in the codepipeline"
   type        = string
-  default     = "artifacts-bucket-mate"
 }
 
-variable "bucket_source_codepipeline_name" {
-  description = "The Name of the bucket of Source S3 in the codepipeline"
-  type        = string
-  default     = "source-bucket-eha"
-
+variable "tags" {
+  description = "Tags to be applied to the codebuild project"
+  type        = map(any)
 }

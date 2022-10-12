@@ -1,9 +1,17 @@
 
 
-output "bucket_codepipeline_arn" {
-  value = aws_s3_bucket.bucket_codepipeline.arn
+output "codepipeline_id" {
+  value       = aws_codepipeline.codepipeline.id
+  description = "The id of the CodePipeline"
 }
 
-output "role_codebuild_arn" {
-  value = module.roles.role_codebuild_arn
+output "codepipeline_name" {
+  value       = aws_codepipeline.codepipeline.name
+  description = "The name of the CodePipeline"
 }
+
+output "codepipeline_arn" {
+  value       = aws_codepipeline.codepipeline.arn
+  description = "The arn of the CodePipeline"
+}
+

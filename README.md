@@ -6,6 +6,9 @@
 
 
 
+
+
+
 ### resources 
 
 [The IDEAL & Practical CI / CD Pipeline - Concepts Overview](https://www.youtube.com/watch?v=OPwU3UWCxhw&t=776s)
@@ -18,3 +21,4 @@
 
 [Best practices for app and infrastructure code repositories](https://devops.stackexchange.com/questions/12803/best-practices-for-app-and-infrastructure-code-repositories)
 
+[Pipeline CI-CD Sample](https://github.com/aws-samples/aws-codepipeline-terraform-cicd-samples)

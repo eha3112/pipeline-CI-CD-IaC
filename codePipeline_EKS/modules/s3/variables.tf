@@ -1,8 +1,8 @@
-variable "ecr_repository_name" {
-  description = "Name of the registery repository"
+
+variable "bucket_artifacts_name" {
+  description = "The name of the bucket of codepipeline artifacts"
   type        = string
 }
-
 
 variable "tags" {
   description = "Tags to be applied to the codebuild project"
